@@ -164,9 +164,6 @@ footer {
   }
 }
 
-<nav><nav>
-  <a href="index.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-  <a href="seemore.html">See More</a>
+<nav><a href="seemore.html">See More</a><nav>
+  
 </nav>
