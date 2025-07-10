@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Paws - See More</title>
+  <title>PUP - See More</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .video-section { text-align:center; margin-bottom:2rem; }
@@ -28,32 +28,28 @@
 <body>
   <div class="sky-bg">
     <header>
-      <h1>Happy Paws</h1>
+      <h1>PUP</h1>
       <p>Your trusted partner for dog items and babysitting</p>
     </header>
     <nav>
-      <a href="index.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="seemore.html">See More</a>
+     <a href="seemore.html">See More</a>
     </nav>
     <main>
       <section class="video-section">
         <h2>Watch Our Business in Action!</h2>
-        <!-- Replace the YouTube link with your own video -->
-        <iframe width="360" height="215" src="https://www.youtube.com/embed/rqQSlEViNpk" title="Happy Paws Video" frameborder="0" allowfullscreen></iframe>
+        <iframe width="360" height="215" src="https://youtu.be/moRkA-z6VUo?si=-m9S154AmLBg7i9a" title="PUP Video" frameborder="0" allowfullscreen></iframe>
       </section>
       <section class="minigame-section">
         <h2>Doggo Jump Minigame</h2>
         <div class="instructions">
-          Press <b>Spacebar</b> to jump over dog treats. Try to get a high score!
+          Click the game area and press <b>Spacebar</b> to jump over dog treats. Try to get a high score!
         </div>
         <canvas id="gameCanvas" width="400" height="160"></canvas>
         <div id="score" style="margin-top:1rem; font-size:1.2rem;"></div>
       </section>
     </main>
     <footer>
-      <p>&copy; 2025 Happy Paws. All rights reserved.</p>
+      <p>&copy; 2025 PUP. All rights reserved.</p>
     </footer>
   </div>
   <script>
@@ -149,9 +145,13 @@
     });
 
     // Start game when images load
-    dogImg.onload = treatImg.onload = function(){
-      if (dogImg.complete && treatImg.complete) gameLoop();
+    let imagesLoaded = 0;
+    function tryStartGame() {
+      imagesLoaded++;
+      if (imagesLoaded === 2) gameLoop();
     }
+    dogImg.onload = tryStartGame;
+    treatImg.onload = tryStartGame;
   </script>
 </body>
 </html>
